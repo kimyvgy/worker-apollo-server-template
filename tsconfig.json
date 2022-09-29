@@ -1,5 +1,5 @@
 {
-  "include": ["**/*.ts"],
+  "include": ["**/*.ts", "worker.build.js"],
   "compilerOptions": {
     "target": "ES2019",
     "module": "CommonJS",

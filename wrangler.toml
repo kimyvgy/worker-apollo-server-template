@@ -1,14 +1,17 @@
-name = "miniflare-typescript-esbuild"
-type = "javascript"
-account_id = ""
+name = "worker-apollo-server"
+main = "build/index.js"
+
 workers_dev = true
-route = ""
-zone_id = ""
 kv_namespaces = [
-  { binding = "counter", id = "", preview_id = "" },
+  { binding = "GRAPHQL_CACHE", id = "dbdc624f2c684f1bb88fa38ab249a13e" }
 ]
+
+compatibility_date = "2022-09-29"
 
 [build]
 command = "npm run build"
-[build.upload]
-format = "service-worker"
+
+[vars]
+GRAPHQL_BASE_ENDPOINT = "/"
+GRAPHQL_PLAYGROUND_ENDPOINT = "/playground"
+GRAPHQL_KV_CACHE = "true"

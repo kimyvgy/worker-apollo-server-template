@@ -1,13 +1,47 @@
-const handleRequest = async (request: Request) => {
-  const url = new URL(request.url);
-  const currentValue = await counter.get(url.pathname) || 0;
-  const newValue = +currentValue + 1;
+import { apolloHandler, GraphQLOptions } from './handlers/apollo';
+import playground from './handlers/playground';
+import setCorsHeaders from './utils/cors';
 
-  await counter.put(url.pathname, newValue.toString());
-
-  return new Response(`Your counter: ${newValue}`);
+const graphQLOptions: GraphQLOptions = {
+  baseEndpoint: GRAPHQL_BASE_ENDPOINT,
+  playgroundEndpoint: GRAPHQL_PLAYGROUND_ENDPOINT,
+  kvCache: Boolean(GRAPHQL_KV_CACHE),
 };
 
-addEventListener("fetch", (event) => {
-  event.respondWith(handleRequest(event.request));
+const handleApolloGraphQL = async (request: Request): Promise<Response> => {
+  const response = request.method === 'OPTIONS'
+    ? new Response('', { status: 204 })
+    : await apolloHandler(request, graphQLOptions) as Response;
+
+  if (graphQLOptions.cors) {
+    setCorsHeaders(response, graphQLOptions.cors);
+  }
+
+  return response;
+}
+
+const handleRequest = async (request: Request): Promise<Response> => {
+  const { pathname } = new URL(request.url)
+
+  try {
+    if (pathname === graphQLOptions.baseEndpoint) {
+      return handleApolloGraphQL(request);
+    }
+
+    if (pathname === graphQLOptions?.playgroundEndpoint) {
+      return playground(request, graphQLOptions.baseEndpoint);
+    }
+
+    return graphQLOptions?.forwardUnmatchedRequestsToOrigin
+      ? fetch(request)
+      : new Response('Not found', { status: 404 });
+  } catch (err: any) {
+    return new Response(graphQLOptions?.debug ? err : 'Something went wrong', {
+      status: 500,
+    });
+  }
+}
+
+addEventListener('fetch', (event) => {
+  event.respondWith(handleRequest(event.request))
 });
