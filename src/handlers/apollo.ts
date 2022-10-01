@@ -1,7 +1,7 @@
 import { ApolloServer } from "apollo-server-cloudflare";
 import { graphqlCloudflare } from "apollo-server-cloudflare/src/cloudflareApollo";
 
-import typeDefs from '../schema';
+import typeDefs from '../schema.graphql';
 import resolvers from '../resolvers';
 import kvCache from '../kv-cache';
 
