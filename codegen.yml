@@ -1,0 +1,16 @@
+schema: "./src/schema.graphql"
+
+generates:
+  ./src/@types/schema.generated.ts:
+    plugins:
+      - typescript
+      - typescript-resolvers
+    config:
+      enumsAsConst: true
+      namingConvention:
+        enumValues: keep
+      # enumValues:
+      #   VoteStatus:
+      #     UP: 1
+      #     DOWN: -1
+      #     NONE: 0
