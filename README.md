@@ -2,10 +2,10 @@
 
 A template for kick starting a Cloudflare worker project to deploy Apollo GraphQL Server to Cloudflare Worker.
 
-[`index.ts`](https://github.com/kimyvgy/worker-apollo-server/blob/main/src/index.ts) is the content of the Workers script.
+[`index.ts`](blob/main/src/index.ts) is the content of the Workers script.
 
-- [`handlers/apollo.ts`](https://github.com/kimyvgy/worker-apollo-server/blob/main/src/handlers/apollo.ts): Route handler for GraphQL query request
-- [`handlers/playground.ts`](https://github.com/kimyvgy/worker-apollo-server/blob/main/src/handlers/playground.ts): Route handler for GraphQL Playground
+- [`handlers/apollo.ts`](blob/main/src/handlers/apollo.ts): Route handler for GraphQL query request
+- [`handlers/playground.ts`](blob/main/src/handlers/playground.ts): Route handler for GraphQL Playground
 
 ## Usage
 
