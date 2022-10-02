@@ -1,6 +1,6 @@
 # 👷 `worker-apollo-server` Quick start
 
-A template for kick starting a Cloudflare worker project.
+A template for kick starting a Cloudflare worker project to deploy Apollo GraphQL Server to Cloudflare Worker.
 
 [`index.ts`](https://github.com/kimyvgy/worker-apollo-server/blob/main/src/index.ts) is the content of the Workers script.
 
@@ -60,4 +60,34 @@ Once that's done, you should be able to deploy your app:
 
 ```sh
 yarn deploy
+```
+
+```bash
+yarn run v1.22.19
+$ wrangler publish
+ ⛅️ wrangler 2.1.9
+-------------------
+Running custom build: npm run generate && npm run build
+
+> generate
+> graphql-codegen --config codegen.yml
+
+✔ Parse Configuration
+✔ Generate outputs
+
+> build
+> NODE_ENV=production node worker.build.js
+
+Your worker has access to the following bindings:
+- KV Namespaces:
+  - GRAPHQL_CACHE: dbdc624f2c684f1bb88fa38ab249a13e
+- Vars:
+  - GRAPHQL_BASE_ENDPOINT: "/"
+  - GRAPHQL_PLAYGROUND_ENDPOINT: "/playground"
+  - GRAPHQL_KV_CACHE: "true"
+Total Upload: 1520.16 KiB / gzip: 285.68 KiB
+Uploaded worker-apollo-server (2.71 sec)
+Published worker-apollo-server (0.28 sec)
+  https://worker-apollo-server.webee-asia.workers.dev
+Done in 7.29s.
 ```
