@@ -1,7 +1,10 @@
+import PokemonAPI from '../datasources/pokemon-api';
+
 export {};
 
 declare global {
-  type ApolloContext = {};
+  type ApolloDataSources = { pokemonAPI: PokemonAPI };
+  type ApolloContext = { dataSources: ApolloDataSources };
 
   interface CorsOptions {
     allowCredentials?: string | undefined;

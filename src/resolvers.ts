@@ -4,7 +4,11 @@ const resolvers: Resolvers<ApolloContext> = {
   Query: {
     example: () => {
       return 'Hello world!';
-    }
+    },
+
+    pokemon: (_source, { id }, { dataSources }) => {
+      return dataSources.pokemonAPI.getPokemon(id);
+    },
   }
 }
 
