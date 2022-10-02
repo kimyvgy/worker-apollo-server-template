@@ -9,7 +9,7 @@ kv_namespaces = [
 compatibility_date = "2022-09-29"
 
 [build]
-command = "npm run build"
+command = "npm run generate && npm run build"
 
 [vars]
 GRAPHQL_BASE_ENDPOINT = "/"
