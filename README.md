@@ -9,7 +9,7 @@ A template for kick starting a Cloudflare worker project to deploy Apollo GraphQ
 
 ## Usage
 
-Click `Use Template` button to create your own repository.
+Click `Use this template` button to create your own repository.
 
 This template uses `graphql-codegen` to auto-generate Typescript types from `schema.graphql`. The types are generated to file `src/@types/schema.generated.ts`. So you can import Resolver Types from there.
 
