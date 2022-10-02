@@ -3,8 +3,10 @@ import { graphqlCloudflare } from "apollo-server-cloudflare/src/cloudflareApollo
 
 import typeDefs from '../schema.graphql';
 import resolvers from '../resolvers';
-import kvCache from '../kv-cache';
+import KVCache from '../kv-cache';
 import PokemonAPI from "~/datasources/pokemon-api";
+
+const kvCache = { cache: new KVCache() };
 
 const dataSources = (): ApolloDataSources => ({
   pokemonAPI: new PokemonAPI(),

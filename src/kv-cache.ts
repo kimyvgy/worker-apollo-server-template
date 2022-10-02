@@ -11,7 +11,7 @@ export default class KVCache implements KeyValueCache {
     const opts: KVNamespacePutOptions = {};
 
     if (options) {
-      opts.expirationTtl = options.ttl || undefined;
+      opts.expirationTtl = Number(options.ttl) < 60 ? Number(options.ttl) : undefined;
     }
 
     return GRAPHQL_CACHE.put(key, value, opts);
