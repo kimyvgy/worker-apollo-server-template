@@ -25,6 +25,7 @@
     "node": ">=16"
   },
   "dependencies": {
+    "apollo-datasource-rest": "^3.7.0",
     "apollo-server-cloudflare": "^3.10.2",
     "graphql": "^16.6.0"
   }
