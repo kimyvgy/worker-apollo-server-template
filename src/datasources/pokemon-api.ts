@@ -7,7 +7,11 @@ class PokemonAPI extends RESTDataSource {
   }
 
   public getPokemon(id: string) {
-    return this.get(`pokemon/${id}`)
+    return this.get(`pokemon/${id}`, undefined, {
+      cacheOptions: {
+        ttl: 60,
+      },
+    })
   }
 }
 
