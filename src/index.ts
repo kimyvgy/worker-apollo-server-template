@@ -1,4 +1,4 @@
-import { apolloHandler, GraphQLOptions } from './handlers/apollo';
+import { apolloHandler } from './handlers/apollo';
 import playground from './handlers/playground';
 import setCorsHeaders from './utils/cors';
 

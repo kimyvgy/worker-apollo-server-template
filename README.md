@@ -20,10 +20,11 @@ Enjoin!
 Live: https://worker-apollo-server.webee-asia.workers.dev/playground
 
 ```graphql
-query Example($id: ID!) {
+query {
   example
-  pokemon(id: $id) {
+  pokemon(id: 1) {
     id
+    name
   }
 }
 ```

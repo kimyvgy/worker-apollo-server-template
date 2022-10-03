@@ -4,7 +4,7 @@
   "scripts": {
     "generate": "graphql-codegen --config codegen.yml",
     "build": "NODE_ENV=production node worker.build.js",
-    "dev": "miniflare --watch --debug --host 0.0.0.0",
+    "dev": "miniflare --watch --debug --host 0.0.0.0 --kv GRAPHQL_CACHE",
     "deploy": "wrangler publish"
   },
   "devDependencies": {
