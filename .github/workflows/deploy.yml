@@ -7,23 +7,26 @@ on:
 
 jobs:
   deploy:
-    name: Deploying on Cloudflare Workers
+    name: Deploy to Cloudflare Workers
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
+      - uses: actions/checkout@v3
       - name: ⎔ Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: 16
-
+          node-version: '16.x'
+      - name: ⎔ Cache node_modules
+        uses: actions/cache@v3
+        env:
+          cache-name: node_modules-16x
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}
       - name: 📥 Download deps
-        uses: borales/actions-yarn@v3.0.0
-        with:
-          cmd: install
-
-      - name: 🧶 Publish
+        run: yarn install --frozen-lockfile
+      - name: 🧶 Publish worker to Cloudflare
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          command: publish --env production

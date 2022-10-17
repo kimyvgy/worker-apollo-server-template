@@ -1,11 +1,6 @@
-name = "worker-apollo-server"
+name = "worker-apollo-server-local"
 main = "build/index.js"
-
 workers_dev = true
-# kv_namespaces = [
-#   { binding = "GRAPHQL_CACHE", id = "" }
-# ]
-
 compatibility_date = "2022-09-29"
 
 [build]
@@ -15,3 +10,13 @@ command = "npm run generate && npm run build"
 GRAPHQL_BASE_ENDPOINT = "/"
 GRAPHQL_PLAYGROUND_ENDPOINT = "/playground"
 GRAPHQL_KV_CACHE = ""
+
+[env.production]
+name = "worker-apollo-server"
+[[env.production.kv_namespaces]]
+binding = "GRAPHQL_CACHE"
+id = "ba46c41d96544abba4aae3600c4955eb"
+[env.production.vars]
+GRAPHQL_BASE_ENDPOINT = "/"
+GRAPHQL_PLAYGROUND_ENDPOINT = "/playground"
+GRAPHQL_KV_CACHE = "true"

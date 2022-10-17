@@ -1,5 +1,5 @@
 {
-  "name": "miniflare-typescript-esbuild",
+  "name": "worker-apollo-server",
   "main": "./build/index.js",
   "scripts": {
     "generate": "graphql-codegen --config codegen.yml",
