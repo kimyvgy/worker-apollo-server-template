@@ -7,15 +7,7 @@ A template for kick starting a Cloudflare worker project to deploy Apollo GraphQ
 - [`handlers/apollo.ts`](blob/main/src/handlers/apollo.ts): Route handler for GraphQL query request
 - [`handlers/playground.ts`](blob/main/src/handlers/playground.ts): Route handler for GraphQL Playground
 
-## Usage
-
-Click [Use this template](https://github.com/kimyvgy/worker-apollo-server/generate) button to create your own repository.
-
-This template uses `graphql-codegen` to auto-generate Typescript types from `schema.graphql`. The types are generated to file `src/@types/schema.generated.ts`. So you can import Resolver Types from there.
-
-Enjoy!
-
-## Examples
+## Example
 
 Live: https://worker-apollo-server.webee-asia.workers.dev/playground
 
@@ -44,6 +36,8 @@ Response:
 
 ## Development
 
+Click [Use this template](https://github.com/kimyvgy/worker-apollo-server/generate) button to create your own repository.
+
 Start your dev server with following commands:
 
 ```sh
@@ -52,6 +46,8 @@ yarn dev
 ```
 
 Open up [http://0.0.0.0:8787](http://0.0.0.0:8787) and you should be ready to go!
+
+> This template uses `graphql-codegen` to auto-generate Typescript types from `schema.graphql`. The types are generated to file `src/@types/schema.generated.ts`. So you can import Resolver Types from there.
 
 ## Deployment
 
