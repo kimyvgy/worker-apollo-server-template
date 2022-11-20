@@ -28,7 +28,8 @@ Response:
   "data": {
     "example": "Hello world!",
     "pokemon": {
-      "id": "1"
+      "id": "1",
+      "name": "bulbasaur"
     }
   }
 }
