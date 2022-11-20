@@ -13,7 +13,7 @@ Click [Use this template](https://github.com/kimyvgy/worker-apollo-server/genera
 
 This template uses `graphql-codegen` to auto-generate Typescript types from `schema.graphql`. The types are generated to file `src/@types/schema.generated.ts`. So you can import Resolver Types from there.
 
-Enjoin!
+Enjoy!
 
 ## Examples
 
