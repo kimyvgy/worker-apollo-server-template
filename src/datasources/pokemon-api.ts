@@ -1,17 +1,15 @@
-import { RESTDataSource } from 'apollo-datasource-rest';
+import type { KeyValueCache } from '@apollo/utils.keyvaluecache';
+import { RESTDataSource } from '@apollo/datasource-rest';
 
 class PokemonAPI extends RESTDataSource {
-  constructor() {
-    super();
-    this.baseURL = 'https://pokeapi.co/api/v2/';
+  override baseURL = 'https://pokeapi.co/api/v2/';
+
+  constructor(options: { cache: KeyValueCache }) {
+    super(options);
   }
 
-  public getPokemon(id: string) {
-    return this.get(`pokemon/${id}`, undefined, {
-      cacheOptions: {
-        ttl: 60,
-      },
-    })
+  getPokemon(id: string): Promise<any> {
+    return this.get(`pokemon/${id}`);
   }
 }
 

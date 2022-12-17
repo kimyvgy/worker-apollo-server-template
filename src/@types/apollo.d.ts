@@ -1,4 +1,5 @@
-import PokemonAPI from '../datasources/pokemon-api';
+import type PokemonAPI from '~/datasources/pokemon-api';
+import type { CorsOptions } from 'apollo-server-integration-cloudflare-workers';
 
 export {};
 
@@ -6,20 +7,9 @@ declare global {
   type ApolloDataSources = { pokemonAPI: PokemonAPI };
   type ApolloContext = { dataSources: ApolloDataSources };
 
-  interface CorsOptions {
-    allowCredentials?: string | undefined;
-    allowHeaders?: string | undefined;
-    allowOrigin?: string | undefined;
-    allowMethods?: string | undefined;
-  }
-
   interface GraphQLOptions {
     // Set the path for the GraphQL server
     baseEndpoint: string;
-
-    // Set the path for the GraphQL playground
-    // This option can be removed to disable the playground route
-    playgroundEndpoint?: string;
 
     // When a request's path isn't matched, forward it to the origin
     forwardUnmatchedRequestsToOrigin?: boolean,

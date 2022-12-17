@@ -8,7 +8,6 @@ command = "npm run generate && npm run build"
 
 [vars]
 GRAPHQL_BASE_ENDPOINT = "/"
-GRAPHQL_PLAYGROUND_ENDPOINT = "/playground"
 GRAPHQL_KV_CACHE = ""
 
 [env.production]
@@ -18,5 +17,4 @@ binding = "GRAPHQL_CACHE"
 id = "ba46c41d96544abba4aae3600c4955eb"
 [env.production.vars]
 GRAPHQL_BASE_ENDPOINT = "/"
-GRAPHQL_PLAYGROUND_ENDPOINT = "/playground"
 GRAPHQL_KV_CACHE = "true"
