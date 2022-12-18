@@ -1,30 +1,42 @@
-import { ApolloServer } from "apollo-server-cloudflare";
-import { graphqlCloudflare } from "apollo-server-cloudflare/src/cloudflareApollo";
+import type { Request, Response } from "@cloudflare/workers-types";
 
-import typeDefs from '../schema.graphql';
-import resolvers from '../resolvers';
-import KVCache from '../kv-cache';
+import { ApolloServer } from '@apollo/server';
+import { startServerAndCreateCloudflareHandler, KVCache } from 'apollo-server-integration-cloudflare-workers';
+import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
+
+import typeDefs from '~/schema.graphql';
+import resolvers from '~/resolvers';
 import PokemonAPI from "~/datasources/pokemon-api";
 
-const kvCache = { cache: new KVCache() };
+interface ContextValue {
+  dataSources: ApolloDataSources;
+};
 
-const dataSources = (): ApolloDataSources => ({
-  pokemonAPI: new PokemonAPI(),
-});
-
-export const apolloHandler = async (request: Request, options: GraphQLOptions) => {
-  const server = new ApolloServer({
+export const apolloHandler = (request: Request, options: GraphQLOptions): Promise<Response> => {
+  const server = new ApolloServer<ContextValue>({
     typeDefs,
     resolvers,
-    dataSources,
-    cache: 'bounded',
-    introspection: Boolean(options.playgroundEndpoint),
-    ...(options.kvCache ? kvCache : {}),
+    introspection: true,
+    plugins: [
+      ApolloServerPluginLandingPageLocalDefault({ footer: false }),
+      // ApolloServerPluginLandingPageProductionDefault({
+      //   graphRef: 'my-graph-id@my-graph-variant',
+      //   footer: false,
+      // })
+    ],
   });
 
-  await server.start();
+  return startServerAndCreateCloudflareHandler(server, {
+    request,
+    cors: options.cors,
+    context: async () => {
+      const cache = options.kvCache ? new KVCache() : server.cache;
 
-  return graphqlCloudflare(
-    () => server.createGraphQLServerOptions(request)
-  )(request);
+      const dataSources: ApolloDataSources = {
+        pokemonAPI: new PokemonAPI({ cache }),
+      };
+
+      return { dataSources };
+    }
+  });
 }

@@ -1,35 +1,17 @@
-import { apolloHandler } from './handlers/apollo';
-import playground from './handlers/playground';
-import setCorsHeaders from './utils/cors';
+import type { Request } from '@cloudflare/workers-types';
+import { apolloHandler } from '~/handlers/apollo';
 
 const graphQLOptions: GraphQLOptions = {
   baseEndpoint: GRAPHQL_BASE_ENDPOINT,
-  playgroundEndpoint: GRAPHQL_PLAYGROUND_ENDPOINT,
   kvCache: Boolean(GRAPHQL_KV_CACHE),
 };
-
-const handleApolloGraphQL = async (request: Request): Promise<Response> => {
-  const response = request.method === 'OPTIONS'
-    ? new Response('', { status: 204 })
-    : await apolloHandler(request, graphQLOptions) as Response;
-
-  if (graphQLOptions.cors) {
-    setCorsHeaders(response, graphQLOptions.cors);
-  }
-
-  return response;
-}
 
 const handleRequest = async (request: Request): Promise<Response> => {
   const { pathname } = new URL(request.url)
 
   try {
     if (pathname === graphQLOptions.baseEndpoint) {
-      return handleApolloGraphQL(request);
-    }
-
-    if (pathname === graphQLOptions?.playgroundEndpoint) {
-      return playground(request, graphQLOptions.baseEndpoint);
+      return apolloHandler(request, graphQLOptions);
     }
 
     return graphQLOptions?.forwardUnmatchedRequestsToOrigin
@@ -43,5 +25,5 @@ const handleRequest = async (request: Request): Promise<Response> => {
 }
 
 addEventListener('fetch', (event) => {
-  event.respondWith(handleRequest(event.request))
+  event.respondWith(handleRequest(event.request as Request));
 });

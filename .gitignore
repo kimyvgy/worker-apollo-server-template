@@ -1,4 +1,6 @@
 .vscode
+.yalc
+yalc.lock
 
 build
 src/@types/schema.generated.ts

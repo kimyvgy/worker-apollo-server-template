@@ -1,15 +1,30 @@
 # 👷 `worker-apollo-server` Quick start
 
-A template for kick starting a Cloudflare worker project to deploy Apollo GraphQL Server to Cloudflare Worker.
+A template for kick starting a Cloudflare worker project to deploy Apollo Server v3 & v4 to Cloudflare Workers.
 
 [`index.ts`](blob/main/src/index.ts) is the content of the Workers script.
 
 - [`handlers/apollo.ts`](blob/main/src/handlers/apollo.ts): Route handler for GraphQL query request
-- [`handlers/playground.ts`](blob/main/src/handlers/playground.ts): Route handler for GraphQL Playground
+- Enable Playground / Sandbox by adding `plugins` + `introspection`:
+
+```javascript
+const server = new ApolloServer<ContextValue>({
+  typeDefs,
+  resolvers,
+  introspection: true,
+  plugins: [
+    ApolloServerPluginLandingPageLocalDefault({ footer: false }),
+    // ApolloServerPluginLandingPageProductionDefault({
+    //   graphRef: 'my-graph-id@my-graph-variant',
+    //   footer: false,
+    // })
+  ],
+});
+```
 
 ## Example
 
-Live: https://worker-apollo-server.webee-asia.workers.dev/playground
+Live: https://worker-apollo-server.webee-asia.workers.dev
 
 ```graphql
 query {
@@ -81,7 +96,6 @@ Your worker has access to the following bindings:
   - GRAPHQL_CACHE: dbdc624f2c684f1bb88fa38ab249a13e
 - Vars:
   - GRAPHQL_BASE_ENDPOINT: "/"
-  - GRAPHQL_PLAYGROUND_ENDPOINT: "/playground"
   - GRAPHQL_KV_CACHE: "true"
 Total Upload: 1520.16 KiB / gzip: 285.68 KiB
 Uploaded worker-apollo-server (2.71 sec)
