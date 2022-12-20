@@ -1720,10 +1720,10 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-apollo-server-integration-cloudflare-workers@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/apollo-server-integration-cloudflare-workers/-/apollo-server-integration-cloudflare-workers-1.0.2.tgz#090ff1e513ff53ed053c4fcb162383ea390303ca"
-  integrity sha512-4B5LRmZrEMUujnlGzqlrWv0hR1M2m1KIr8UfNlt3FVc8seTTQPe618SSMJNEmZPxx1NTnNrEn+PSrKK2QxIuFQ==
+apollo-server-integration-cloudflare-workers@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/apollo-server-integration-cloudflare-workers/-/apollo-server-integration-cloudflare-workers-2.0.0.tgz#4fc01f6a46aad68c239d1f53f84037ae8e48c4db"
+  integrity sha512-9ulXJ5NMbSLE7hrG5j0ZNRdW9b+9JOwXD302xjOmBfDpzXXCesun66Boqoo6sJ0dWnqFp7jd/S5iEdGjnNbhLQ==
 
 arg@^4.1.0:
   version "4.1.3"

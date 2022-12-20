@@ -1,7 +1,5 @@
-import type { Request, Response } from "@cloudflare/workers-types";
-
 import { ApolloServer } from '@apollo/server';
-import { startServerAndCreateCloudflareHandler, KVCache } from 'apollo-server-integration-cloudflare-workers';
+import { startServerAndCreateCloudflareHandler, KVCache, GraphQLRequestHandler } from 'apollo-server-integration-cloudflare-workers';
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
 
 import typeDefs from '~/schema.graphql';
@@ -12,22 +10,21 @@ interface ContextValue {
   dataSources: ApolloDataSources;
 };
 
-export const apolloHandler = (request: Request, options: GraphQLOptions): Promise<Response> => {
-  const server = new ApolloServer<ContextValue>({
-    typeDefs,
-    resolvers,
-    introspection: true,
-    plugins: [
-      ApolloServerPluginLandingPageLocalDefault({ footer: false }),
-      // ApolloServerPluginLandingPageProductionDefault({
-      //   graphRef: 'my-graph-id@my-graph-variant',
-      //   footer: false,
-      // })
-    ],
-  });
+const server = new ApolloServer<ContextValue>({
+  typeDefs,
+  resolvers,
+  introspection: true,
+  plugins: [
+    ApolloServerPluginLandingPageLocalDefault({ footer: false }),
+    // ApolloServerPluginLandingPageProductionDefault({
+    //   graphRef: 'my-graph-id@my-graph-variant',
+    //   footer: false,
+    // })
+  ],
+});
 
+export const createGraphQLHandler = (options: GraphQLOptions): GraphQLRequestHandler => {
   return startServerAndCreateCloudflareHandler(server, {
-    request,
     cors: options.cors,
     context: async () => {
       const cache = options.kvCache ? new KVCache() : server.cache;
