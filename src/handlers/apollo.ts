@@ -30,7 +30,7 @@ export const createGraphQLHandler = (options: GraphQLOptions): GraphQLRequestHan
       const cache = options.kvCache ? new KVCache() : server.cache;
 
       const dataSources: ApolloDataSources = {
-        pokemonAPI: new PokemonAPI({ cache }),
+        pokemonAPI: new PokemonAPI({ cache, fetch: fetch.bind(globalThis) }),
       };
 
       return { dataSources };
