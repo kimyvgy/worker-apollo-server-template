@@ -5,7 +5,7 @@ A template for kick starting a Cloudflare worker project to deploy Apollo Server
 [`index.ts`](blob/main/src/index.ts) is the content of the Workers script.
 
 - [`handlers/apollo.ts`](blob/main/src/handlers/apollo.ts): Route handler for GraphQL query request
-- [kimyvgy/apollo-server-integration-cloudflare-workers](https://github.com/kimyvgy/apollo-server-integration-cloudflare-workers)
+- [@as-integrations/cloudflare-workers](https://www.npmjs.com/package/@as-integrations/cloudflare-workers)
 - Enable Playground / Sandbox by adding `plugins` + `introspection`:
 
 ```javascript
