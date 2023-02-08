@@ -1,10 +1,11 @@
 import { ApolloServer } from '@apollo/server';
-import { startServerAndCreateCloudflareHandler, KVCache, GraphQLRequestHandler } from 'apollo-server-integration-cloudflare-workers';
+import { startServerAndCreateCloudflareWorkersHandler, CloudflareWorkersHandler } from '@as-integrations/cloudflare-workers'
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
 
 import typeDefs from '~/schema.graphql';
 import resolvers from '~/resolvers';
 import PokemonAPI from "~/datasources/pokemon-api";
+import { KVCache } from '~/kv-cache';
 
 interface ContextValue {
   dataSources: ApolloDataSources;
@@ -23,17 +24,16 @@ const server = new ApolloServer<ContextValue>({
   ],
 });
 
-export const createGraphQLHandler = (options: GraphQLOptions): GraphQLRequestHandler => {
-  return startServerAndCreateCloudflareHandler(server, {
-    cors: options.cors,
-    context: async () => {
+export const createGraphQLHandler = (options: GraphQLOptions): CloudflareWorkersHandler => {
+  return startServerAndCreateCloudflareWorkersHandler(server, {
+    context: async ({ request }) => {
       const cache = options.kvCache ? new KVCache() : server.cache;
 
-      const dataSources: ApolloDataSources = {
-        pokemonAPI: new PokemonAPI({ cache, fetch: fetch.bind(globalThis) }),
-      };
+        const dataSources: ApolloDataSources = {
+          pokemonAPI: new PokemonAPI({ cache, fetch: fetch.bind(globalThis) }),
+        };
 
-      return { dataSources };
-    }
+        return { dataSources };
+    },
   });
 }
