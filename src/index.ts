@@ -1,5 +1,5 @@
 import type { Request } from '@cloudflare/workers-types';
-import type { GraphQLRequestHandler } from 'apollo-server-integration-cloudflare-workers';
+import type { CloudflareWorkersHandler } from '@as-integrations/cloudflare-workers';
 import { createGraphQLHandler } from '~/handlers/apollo';
 
 const graphQLOptions: GraphQLOptions = {
@@ -7,7 +7,7 @@ const graphQLOptions: GraphQLOptions = {
   kvCache: Boolean(GRAPHQL_KV_CACHE),
 };
 
-const handleGraphQLRequest: GraphQLRequestHandler = createGraphQLHandler(graphQLOptions);
+const handleGraphQLRequest: CloudflareWorkersHandler = createGraphQLHandler(graphQLOptions);
 
 const handleRequest = async (request: Request): Promise<Response> => {
   const { pathname } = new URL(request.url);

@@ -26,7 +26,7 @@
   "dependencies": {
     "@apollo/datasource-rest": "^4.3.2",
     "@apollo/server": "^4.3.0",
-    "apollo-server-integration-cloudflare-workers": "^2.0.0",
+    "@as-integrations/cloudflare-workers": "^0.1.0",
     "graphql": "^16.6.0"
   }
 }

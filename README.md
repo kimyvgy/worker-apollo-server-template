@@ -1,4 +1,4 @@
-# 👷 `worker-apollo-server` Quick start
+# 👷 `worker-apollo-server-template` Quick start
 
 A template for kick starting a Cloudflare worker project to deploy Apollo Server v4 to Cloudflare Workers.
 
