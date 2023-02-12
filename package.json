@@ -5,7 +5,8 @@
     "generate": "graphql-codegen --config codegen.yml",
     "build": "NODE_ENV=production node worker.build.js",
     "dev": "miniflare --watch --debug --host 0.0.0.0 --kv GRAPHQL_CACHE",
-    "deploy": "wrangler publish"
+    "deploy": "wrangler publish",
+    "deploy-prod": "wrangler publish --env production"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20221111.1",
