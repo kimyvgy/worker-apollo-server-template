@@ -70,10 +70,23 @@ Open up [http://0.0.0.0:8787](http://0.0.0.0:8787) and you should be ready to go
 
 If you don't already have an account, then [create a cloudflare account here](https://dash.cloudflare.com/sign-up) and after verifying your email address with Cloudflare, go to your dashboard and set up your free custom Cloudflare Workers subdomain.
 
+Please change the environment variables for Cloudflare Workers in `wrangler.toml` file:
+```toml
+# Example
+[env.production]
+name = "worker-apollo-server"
+[[env.production.kv_namespaces]]
+binding = "GRAPHQL_CACHE"
+id = "ba46c41d96544abba4aae3600c4955eb"
+[env.production.vars]
+GRAPHQL_BASE_ENDPOINT = "/"
+GRAPHQL_KV_CACHE = "true"
+```
+
 Once that's done, you should be able to deploy your app:
 
 ```sh
-yarn deploy
+yarn deploy --env production
 ```
 
 ```bash
