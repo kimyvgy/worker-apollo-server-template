@@ -692,10 +692,10 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@esbuild-plugins/node-globals-polyfill@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@esbuild-plugins/node-globals-polyfill/-/node-globals-polyfill-0.1.0.tgz#520e719cda7b601f51d5e39719762fdf95c67525"
-  integrity sha512-kZFvuxGb2puY7USbS/HtKaNrvR2FUlU6iddcYwGOz6nlv4ficSHYmhZ4x0WrJnLNBYzla+Y3P6YvC0DPrb0M/Q==
+"@esbuild-plugins/node-globals-polyfill@0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@esbuild-plugins/node-globals-polyfill/-/node-globals-polyfill-0.2.3.tgz#0e4497a2b53c9e9485e149bc92ddb228438d6bcf"
+  integrity sha512-r3MIryXDeXDOZh7ih1l/yE9ZLORCd5e8vWg02azWRGj5SPTuoh69A2AIyn0Z31V/kHBfZ4HgWJ+OK3GTTwLmnw==
 
 "@esbuild-plugins/node-modules-polyfill@0.1.0":
   version "0.1.0"
