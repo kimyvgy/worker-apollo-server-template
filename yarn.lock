@@ -697,10 +697,10 @@
   resolved "https://registry.yarnpkg.com/@esbuild-plugins/node-globals-polyfill/-/node-globals-polyfill-0.1.0.tgz#520e719cda7b601f51d5e39719762fdf95c67525"
   integrity sha512-kZFvuxGb2puY7USbS/HtKaNrvR2FUlU6iddcYwGOz6nlv4ficSHYmhZ4x0WrJnLNBYzla+Y3P6YvC0DPrb0M/Q==
 
-"@esbuild-plugins/node-modules-polyfill@0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@esbuild-plugins/node-modules-polyfill/-/node-modules-polyfill-0.1.0.tgz#56c246edfcf63203eb71f35ee642abe82dca8af3"
-  integrity sha512-gHOz7qxKwBR7PODhaSwAWGv/fdty28mVxWc9o1GfmEG1kWpaSQLqfKGbSlKferXBC/UYD/h/nP3XPK+VarrUZw==
+"@esbuild-plugins/node-modules-polyfill@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@esbuild-plugins/node-modules-polyfill/-/node-modules-polyfill-0.2.2.tgz#cefa3dc0bd1c16277a8338b52833420c94987327"
+  integrity sha512-LXV7QsWJxRuMYvKbiznh+U1ilIop3g2TeKRzUxOG5X3YITc8JyyTa90BmLwqqv0YnX4v32CSlG+vsziZp9dMvA==
   dependencies:
     escape-string-regexp "^4.0.0"
     rollup-plugin-node-polyfills "^0.2.1"
