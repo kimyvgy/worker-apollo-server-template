@@ -216,9 +216,9 @@
     node-fetch "^2.6.1"
 
 "@as-integrations/cloudflare-workers@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@as-integrations/cloudflare-workers/-/cloudflare-workers-0.1.0.tgz#1fda156dc87ea52059ebe1a31752a8408e478a63"
-  integrity sha512-GYOvZiqnnrSVRtsVtc/i+LfxFsOTrgh+7Q9O0VliQydDTDEn9uyKOdayb2NVnEv0eXkf8oRofM7M3FOo1Krb5Q==
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@as-integrations/cloudflare-workers/-/cloudflare-workers-0.1.1.tgz#da33b42fbad580e635f304d06492d353e631f5f8"
+  integrity sha512-l0KicZT09yKwyREob2fNqgq20uB+2pMNMJVHVGfy7lgvVyIz66jLQX5CG9wxvt4ovR1gIj3yn4R1WuaJM+56zw==
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.18.6":
   version "7.18.6"
