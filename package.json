@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20221111.1",
-    "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.0",
     "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
     "@graphql-codegen/cli": "^2.13.1",
     "@graphql-codegen/typescript": "^2.7.3",
