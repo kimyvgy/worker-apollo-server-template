@@ -25,7 +25,7 @@ const server = new ApolloServer<ContextValue>({
 
 ## Example
 
-Live: https://worker-apollo-server.webee-asia.workers.dev
+Live: https://worker-apollo-server.ds101.workers.dev
 
 ```graphql
 query {
@@ -114,6 +114,6 @@ Your worker has access to the following bindings:
 Total Upload: 1520.16 KiB / gzip: 285.68 KiB
 Uploaded worker-apollo-server (2.71 sec)
 Published worker-apollo-server (0.28 sec)
-  https://worker-apollo-server.webee-asia.workers.dev
+  https://worker-apollo-server.ds101.workers.dev
 Done in 7.29s.
 ```
