@@ -223,10 +223,10 @@
   dependencies:
     node-fetch "^2.6.1"
 
-"@as-integrations/cloudflare-workers@^0.1.0":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@as-integrations/cloudflare-workers/-/cloudflare-workers-0.1.1.tgz#da33b42fbad580e635f304d06492d353e631f5f8"
-  integrity sha512-l0KicZT09yKwyREob2fNqgq20uB+2pMNMJVHVGfy7lgvVyIz66jLQX5CG9wxvt4ovR1gIj3yn4R1WuaJM+56zw==
+"@as-integrations/cloudflare-workers@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@as-integrations/cloudflare-workers/-/cloudflare-workers-0.2.0.tgz#e85ef2cff61909685a22f29273852b21183b6e55"
+  integrity sha512-yXigx4vq0Qjkupf4hGn5+lvoxznC/eMhpdAUHrQVze42n4VFqcYxLWTNyJeCNnkX8KYJo1PtePL3o3phGHFkhw==
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.18.6":
   version "7.18.6"
