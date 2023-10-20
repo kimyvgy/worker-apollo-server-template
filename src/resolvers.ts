@@ -6,7 +6,7 @@ const resolvers: Resolvers<ApolloContext> = {
       return 'Hello world!';
     },
 
-    pokemon: (_source, { id }, { dataSources }) => {
+    pokemon: (_source: any, { id } :any, { dataSources }: any) => {
       return dataSources.pokemonAPI.getPokemon(id);
     },
   }

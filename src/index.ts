@@ -27,6 +27,6 @@ const handleRequest = async (request: Request): Promise<Response> => {
   }
 }
 
-addEventListener('fetch', (event) => {
+addEventListener('fetch', (event: any) => {
   event.respondWith(handleRequest(event.request as Request));
 });
