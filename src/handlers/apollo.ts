@@ -26,7 +26,7 @@ const server = new ApolloServer<ContextValue>({
 
 export const createGraphQLHandler = (options: GraphQLOptions): CloudflareWorkersHandler => {
   return startServerAndCreateCloudflareWorkersHandler(server, {
-    context: async ({ request }) => {
+    context: async ({ request }: any) => {
       const cache = options.kvCache ? new KVCache() : server.cache;
 
         const dataSources: ApolloDataSources = {
