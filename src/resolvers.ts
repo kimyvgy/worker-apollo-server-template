@@ -3,7 +3,7 @@ import { Resolvers } from "./@types/schema.generated";
 const resolvers: Resolvers<ApolloContext> = {
   Query: {
     example: () => {
-      return 'Hello world!';
+      return 'Hello universe!';
     },
 
     pokemon: (_source, { id }, { dataSources }) => {
