@@ -23,14 +23,19 @@
   resolved "https://registry.yarnpkg.com/@apollo/cache-control-types/-/cache-control-types-1.0.3.tgz#5da62cf64c3b4419dabfef4536b57a40c8ff0b47"
   integrity sha512-F17/vCp7QVwom9eG7ToauIKdAxpSoadsJnqIfyryLFSkLSOEqu+eC5Z3N8OXcUVStuOMcNHlyraRsA6rRICu4g==
 
-"@apollo/datasource-rest@^4.3.2":
-  version "4.3.2"
-  resolved "https://registry.yarnpkg.com/@apollo/datasource-rest/-/datasource-rest-4.3.2.tgz#ba0c13500f733fc14729eadba1d2db77a2e2d0a4"
-  integrity sha512-qTilJGy5CnqVOvyhkK8hzcCY+Hr8UaY3EgCbKQqlxO1yxp75qGtGapLhQMC/h578V8MYR773t/kLYnQe5eJg/w==
+"@apollo/datasource-rest@^6.0.0":
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/@apollo/datasource-rest/-/datasource-rest-6.2.2.tgz#a9c2285a7d0a904ef536d106b32d446ecebb982e"
+  integrity sha512-0rxlyAdlZ5n4zoPsME5TCzxZiyu/4m5dawatclr2ckwAewnGARcqdhFnckrhlOIgLQTtcl9lCmUit4DGoK47lw==
   dependencies:
-    "@apollo/utils.fetcher" "^1.0.0"
-    "@apollo/utils.keyvaluecache" "1.0.1"
-    http-cache-semantics "^4.1.0"
+    "@apollo/utils.fetcher" "^3.0.0"
+    "@apollo/utils.keyvaluecache" "^3.1.0"
+    "@apollo/utils.logger" "^3.0.0"
+    "@apollo/utils.withrequired" "^3.0.0"
+    "@types/http-cache-semantics" "^4.0.1"
+    http-cache-semantics "^4.1.1"
+    lodash.clonedeep "^4.5.0"
+    lodash.isplainobject "^4.0.6"
     node-fetch "^2.6.7"
 
 "@apollo/protobufjs@1.2.7":
@@ -113,28 +118,20 @@
   resolved "https://registry.yarnpkg.com/@apollo/utils.dropunuseddefinitions/-/utils.dropunuseddefinitions-2.0.1.tgz#916cd912cbd88769d3b0eab2d24f4674eeda8124"
   integrity sha512-EsPIBqsSt2BwDsv8Wu76LK5R1KtsVkNoO4b0M5aK0hx+dGg9xJXuqlr7Fo34Dl+y83jmzn+UvEW+t1/GP2melA==
 
-"@apollo/utils.fetcher@^1.0.0":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@apollo/utils.fetcher/-/utils.fetcher-1.1.1.tgz#909974d9c98fdd0ad64808596860a11cbb2a6afa"
-  integrity sha512-0vXVznO7kw5VWwxyV5wsDvYEwjDpyZ7vYQAXCseLXqBn2eWEIDViM7qRzi/Hnv4zzAQ05phdimSED99K+lg+SQ==
-
 "@apollo/utils.fetcher@^2.0.0":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@apollo/utils.fetcher/-/utils.fetcher-2.0.1.tgz#2f6e3edc8ce79fbe916110d9baaddad7e13d955f"
   integrity sha512-jvvon885hEyWXd4H6zpWeN3tl88QcWnHp5gWF5OPF34uhvoR+DFqcNxs9vrRaBBSY3qda3Qe0bdud7tz2zGx1A==
 
+"@apollo/utils.fetcher@^3.0.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@apollo/utils.fetcher/-/utils.fetcher-3.1.0.tgz#0639c30a5ac57e3e62784b180495023f5e886fe0"
+  integrity sha512-Z3QAyrsQkvrdTuHAFwWDNd+0l50guwoQUoaDQssLOjkmnmVuvXlJykqlEJolio+4rFwBnWdoY1ByFdKaQEcm7A==
+
 "@apollo/utils.isnodelike@^2.0.0", "@apollo/utils.isnodelike@^2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@apollo/utils.isnodelike/-/utils.isnodelike-2.0.1.tgz#08a7e50f08d2031122efa25af089d1c6ee609f31"
   integrity sha512-w41XyepR+jBEuVpoRM715N2ZD0xMD413UiJx8w5xnAZD2ZkSJnMJBoIzauK83kJpSgNuR6ywbV29jG9NmxjK0Q==
-
-"@apollo/utils.keyvaluecache@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@apollo/utils.keyvaluecache/-/utils.keyvaluecache-1.0.1.tgz#46f310f859067efe9fa126156c6954f8381080d2"
-  integrity sha512-nLgYLomqjVimEzQ4cdvVQkcryi970NDvcRVPfd0OPeXhBfda38WjBq+WhQFk+czSHrmrSp34YHBxpat0EtiowA==
-  dependencies:
-    "@apollo/utils.logger" "^1.0.0"
-    lru-cache "^7.10.1"
 
 "@apollo/utils.keyvaluecache@^2.1.0":
   version "2.1.1"
@@ -144,15 +141,23 @@
     "@apollo/utils.logger" "^2.0.1"
     lru-cache "^7.14.1"
 
-"@apollo/utils.logger@^1.0.0":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@apollo/utils.logger/-/utils.logger-1.0.1.tgz#aea0d1bb7ceb237f506c6bbf38f10a555b99a695"
-  integrity sha512-XdlzoY7fYNK4OIcvMD2G94RoFZbzTQaNP0jozmqqMudmaGo2I/2Jx71xlDJ801mWA/mbYRihyaw6KJii7k5RVA==
+"@apollo/utils.keyvaluecache@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@apollo/utils.keyvaluecache/-/utils.keyvaluecache-3.1.0.tgz#acda4c4b1906233dcca3239d77c5d75b3058a81f"
+  integrity sha512-MM/DKIqpQQbuNG1gNPAlGc45THdWkroTmN8o/J09merFwf/LlZ7+lAfcHFDXIYIknwKmUjJrOMS3OxYbjrz2hA==
+  dependencies:
+    "@apollo/utils.logger" "^3.0.0"
+    lru-cache "^10.0.0"
 
 "@apollo/utils.logger@^2.0.0", "@apollo/utils.logger@^2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@apollo/utils.logger/-/utils.logger-2.0.1.tgz#74faeb97d7ad9f22282dfb465bcb2e6873b8a625"
   integrity sha512-YuplwLHaHf1oviidB7MxnCXAdHp3IqYV8n0momZ3JfLniae92eYqMIx+j5qJFX6WKJPs6q7bczmV4lXIsTu5Pg==
+
+"@apollo/utils.logger@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@apollo/utils.logger/-/utils.logger-3.0.0.tgz#5b67de1e476bdfa8be70bfaa05c7e65a6a427960"
+  integrity sha512-M8V8JOTH0F2qEi+ktPfw4RL7MvUycDfKp7aEap2eWXfL5SqWHN6jTLbj5f5fj1cceHpyaUSOZlvlaaryaxZAmg==
 
 "@apollo/utils.printwithreducedwhitespace@^2.0.1":
   version "2.0.1"
@@ -192,6 +197,11 @@
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@apollo/utils.withrequired/-/utils.withrequired-2.0.1.tgz#e72bc512582a6f26af150439f7eb7473b46ba874"
   integrity sha512-YBDiuAX9i1lLc6GeTy1m7DGLFn/gMnvXqlalOIMjM7DeOgIacEjjfwPqb0M1CQ2v11HhR15d1NmxJoRCfrNqcA==
+
+"@apollo/utils.withrequired@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@apollo/utils.withrequired/-/utils.withrequired-3.0.0.tgz#1342bab438528d09c41e43ce33cb976fa9c99e52"
+  integrity sha512-aaxeavfJ+RHboh7c2ofO5HHtQobGX4AgUujXP4CXpREHp9fQ9jPi6K9T1jrAKe7HIipoP0OJ1gd6JamSkFIpvA==
 
 "@ardatan/relay-compiler@12.0.0":
   version "12.0.0"
@@ -1649,6 +1659,11 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
+"@types/http-cache-semantics@^4.0.1":
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/@types/http-cache-semantics/-/http-cache-semantics-4.0.4.tgz#b979ebad3919799c979b17c72621c0bc0a31c6c4"
+  integrity sha512-1m0bIFVc7eJWyve9S0RnuRgcQqF/Xd5QsUZAZeQFr1Q3/p9JWoQQEqmVy+DPTNpGXwhgIetAoYF8JSc33q29QA==
+
 "@types/http-errors@*":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@types/http-errors/-/http-errors-2.0.3.tgz#c54e61f79b3947d040f150abd58f71efb422ff62"
@@ -2863,7 +2878,7 @@ header-case@^2.0.4:
     capital-case "^1.0.4"
     tslib "^2.0.3"
 
-http-cache-semantics@^4.1.0:
+http-cache-semantics@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/http-cache-semantics/-/http-cache-semantics-4.1.1.tgz#abe02fcb2985460bf0323be664436ec3476a6d5a"
   integrity sha512-er295DKPVsV82j5kw1Gjt+ADA/XYHsajl82cGNQG2eyoPkvgUhX+nDIyelzhIWbbsXP39EHcI6l5tYs2FYqYXQ==
@@ -3147,6 +3162,16 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
+lodash.clonedeep@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
+  integrity sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==
+
+lodash.isplainobject@^4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
+  integrity sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==
+
 lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
@@ -3205,6 +3230,11 @@ lower-case@^2.0.2:
   integrity sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==
   dependencies:
     tslib "^2.0.3"
+
+lru-cache@^10.0.0:
+  version "10.0.3"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-10.0.3.tgz#b40014d7d2d16d94130b87297a04a1f24874ae7c"
+  integrity sha512-B7gr+F6MkqB3uzINHXNctGieGsRTMwIBgxkp0yq/5BwcuDzD4A8wQpHQW6vDAm1uKSLQghmRdD9sKqf2vJ1cEg==
 
 lru-cache@^5.1.1:
   version "5.1.1"
