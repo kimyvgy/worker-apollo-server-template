@@ -3315,10 +3315,10 @@ mimic-fn@^2.1.0:
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
   integrity sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
 
-miniflare@3.20231030.3:
-  version "3.20231030.3"
-  resolved "https://registry.yarnpkg.com/miniflare/-/miniflare-3.20231030.3.tgz#e6acd6fea11a53c33ff6a9c0c1a1e38146fb3ab5"
-  integrity sha512-lquHSh0XiO8uoWDujOLHtDS9mkUTJTc5C5amiQ6A++5y0f+DWiMqbDBvvwjlYf4Dvqk6ChFya9dztk7fg2ZVxA==
+miniflare@3.20231030.4:
+  version "3.20231030.4"
+  resolved "https://registry.yarnpkg.com/miniflare/-/miniflare-3.20231030.4.tgz#309b76f4dd1198504bc5b3be7fcdc35876797464"
+  integrity sha512-7MBz0ArLuDop1WJGZC6tFgN6c5MRyDOIlxbm3yp0TRBpvDS/KsTuWCQcCjsxN4QQ5zvL3JTkuIZbQzRRw/j6ow==
   dependencies:
     acorn "^8.8.0"
     acorn-walk "^8.2.0"
