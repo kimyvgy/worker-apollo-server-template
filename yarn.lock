@@ -3199,10 +3199,10 @@ mimic-fn@^2.1.0:
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
   integrity sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
 
-miniflare@3.20240223.0:
-  version "3.20240223.0"
-  resolved "https://registry.yarnpkg.com/miniflare/-/miniflare-3.20240223.0.tgz#fdb479301976c468e0a125d324a1059768245765"
-  integrity sha512-8T/36FEfvsL4aMF7SLZ28v+PQL0jsUlVw/u114GYcdobkyPax9E6Ahn0XePOHEqLxQSndwPee+eS1phHANFePA==
+miniflare@3.20240223.1:
+  version "3.20240223.1"
+  resolved "https://registry.yarnpkg.com/miniflare/-/miniflare-3.20240223.1.tgz#e5d8f5fd395d2e37b8e8a76c34153d2aec9f8755"
+  integrity sha512-5pP4Kml9JtPpCMhfVkTyzNen08bKl2swxZ6i+gYzQTo/Rcjk6neLqgVGG64JFeJFKzdGEczk5Hnwl9U04OGRiw==
   dependencies:
     "@cspotcode/source-map-support" "0.8.1"
     acorn "^8.8.0"
