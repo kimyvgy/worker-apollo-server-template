@@ -18,7 +18,7 @@
     "@graphql-tools/optimize": "^2.0.0",
     "@luckycatfactory/esbuild-graphql-loader": "^3.7.0",
     "esbuild": "^0.20.0",
-    "miniflare": "3.20240304.2",
+    "miniflare": "3.20240314.0",
     "typescript": "^5.0.0"
   },
   "engines": {
