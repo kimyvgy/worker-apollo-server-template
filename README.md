@@ -24,7 +24,7 @@ npm install
 npm run dev
 ```
 
-- If you edit the `src/schema.graphql`, you must re-generate the schema type definitions:
+- If you edit the `src/schema.ts`, you must re-generate the schema type definitions:
 
 ```bash
 npm run generate
