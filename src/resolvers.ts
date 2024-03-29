@@ -1,6 +1,6 @@
-import { Resolvers } from "./@types/schema.generated";
+import { Resolvers } from "./@types/apollo-server";
 
-const resolvers: Resolvers<ApolloContext> = {
+const resolvers: Resolvers<Context> = {
   Query: {
     example: () => {
       return 'Hello universe!';
