@@ -1,17 +1,21 @@
 {
-  "include": ["**/*.ts"],
   "compilerOptions": {
-    "target": "ES2019",
-    "module": "CommonJS",
-    "lib": ["ES2019"],
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "module": "esnext",
+    "target": "esnext",
+    "lib": [
+      "esnext"
+    ],
     "strict": true,
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "types": ["@cloudflare/workers-types"],
-    "typeRoots": ["node_modules/@types", "src/@types"],
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./src/*"]
-    }
-  }
+    "moduleResolution": "node",
+    "types": [
+      "@cloudflare/workers-types"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test"
+  ]
 }

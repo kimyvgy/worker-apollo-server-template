@@ -1,3 +1,4 @@
+const typeDefs = `#graphql
 type Query {
   example: String!
   pokemon(id: ID!): Pokemon
@@ -21,3 +22,6 @@ type Pokemon {
   weight: Int!
   sprites: PokemonSprites!
 }
+`;
+
+export default typeDefs;

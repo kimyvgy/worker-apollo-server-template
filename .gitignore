@@ -1,12 +1,9 @@
-.vscode
 .yalc
-yalc.lock
+.wrangler
+.DS_Store
+/node_modules
+*-lock.*
+*.lock
+*.log
 
-build
-src/@types/schema.generated.ts
-node_modules
-.env
-
-# yarn.lock
-yarn-error.log
-package-lock.json
+/dist
