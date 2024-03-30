@@ -2,12 +2,16 @@
 
 A template for kick starting a Cloudflare Workers project to deploy Apollo Server v4.
 
-- [ESModule syntax](https://developers.cloudflare.com/workers/reference/migrate-to-module-workers/) + TypeScript
+Live demo: https://worker-apollo-server.ds101.workers.dev
+
+## Features
+
 - [@as-integrations/cloudflare-workers](https://www.npmjs.com/package/@as-integrations/cloudflare-workers) integrated
 - [@apollo/datasource-rest](https://www.npmjs.com/package/@apollo/datasource-rest) integrated
 - [GraphQL Codegen](https://the-guild.dev/graphql/codegen) integrated
-
-Live demo: https://worker-apollo-server.ds101.workers.dev
+- [ESModule syntax](https://developers.cloudflare.com/workers/reference/migrate-to-module-workers/) + TypeScript
+- Auto-deploy to Cloudflare Workers with GitHub Actions
+- Auto-update dependencies with RenovateBot
 
 ## Usage
 
