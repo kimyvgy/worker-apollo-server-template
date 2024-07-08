@@ -15,7 +15,7 @@
     "@graphql-codegen/typescript": "^4.0.6",
     "@graphql-codegen/typescript-resolvers": "^4.0.6",
     "typescript": "^5.0.4",
-    "vitest": "^1.4.0",
+    "vitest": "^2.0.0",
     "wrangler": "^3.0.0"
   },
   "dependencies": {
