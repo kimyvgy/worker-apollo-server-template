@@ -1,7 +1,7 @@
 name = "worker-apollo-server"
 main = "./src/index.ts"
-compatibility_date = "2022-09-29"
-nodejs_compat = true
+compatibility_flags = [ "nodejs_compat" ]
+compatibility_date = "2024-09-29"
 
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
 # Note: Use secrets to store sensitive data.
