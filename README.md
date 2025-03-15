@@ -2,7 +2,7 @@
 
 A template for kick starting a Cloudflare Workers project to deploy Apollo Server v4.
 
-Live demo: https://worker-apollo-server.phelab.workers.dev
+Live demo: https://worker-apollo-server.teguru.workers.dev
 
 ## Features
 
