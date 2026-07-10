@@ -25,7 +25,7 @@ jobs:
       - name: 📥 Download deps
         run: npm install
       - name: 🧶 Deploy
-        uses: cloudflare/wrangler-action@v3.15
+        uses: cloudflare/wrangler-action@v4.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
