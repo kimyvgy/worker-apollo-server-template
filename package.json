@@ -22,6 +22,6 @@
     "@apollo/datasource-rest": "^6.2.2",
     "@apollo/server": "^4.10.2",
     "@as-integrations/cloudflare-workers": "^1.0.0-alpha",
-    "graphql": "^16.8.1"
+    "graphql": "^17.0.0"
   }
 }
