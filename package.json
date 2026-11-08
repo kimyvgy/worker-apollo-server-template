@@ -11,9 +11,9 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.0.0",
-    "@graphql-codegen/cli": "^7.0.0",
-    "@graphql-codegen/typescript": "^6.0.0",
-    "@graphql-codegen/typescript-resolvers": "^6.0.0",
+    "@graphql-codegen/cli": "^8.0.0",
+    "@graphql-codegen/typescript": "^7.0.0",
+    "@graphql-codegen/typescript-resolvers": "^7.0.0",
     "typescript": "^7.0.0",
     "vitest": "^4.0.0",
     "wrangler": "^4.0.0"
